@@ -1,0 +1,55 @@
+        <section class="service-area pt-120 pb-120">
+            <div class="service__shape wow slideInRight">
+              <img class="sway_Y__animation" [src]="'assets/images/shape/service-bg-shape.png'" alt="shape" loading="lazy"/>
+            </div>
+            <div class="container">
+              <div class="d-flex flex-wrap gap-4 align-items-center justify-content-between mb-60">
+                <div class="section-header">
+                  <h5 class="wow fadeInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <img class="me-1" [src]="'assets/images/icon/section-title.png'" alt="icon" loading="lazy"/>
+                    {{'What We OFFER' | translate}}
+                  </h5>
+                  <h2 class="wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">{{'Excellent IT Services' | translate}}</h2>
+                </div>
+                <a [routerLink]="['/service']" class="btn-one wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                  {{"View All Services" | translate}}
+                  <i class="fa-regular fa-arrow-right-long"></i></a>
+              </div>
+
+              <!-- Swiper container -->
+              <swiper-container
+              loop="true" autoplay="true" slides-per-view="3" speed="3000" navigation="true" autoplay-delay="7000"
+              space-between="20"
+              navigation-next-el=".custom-next-button"
+              navigation-prev-el=".custom-prev-button"
+              #swiper2
+              class="row g-4 position-relative"
+              >
+              <swiper-slide *ngFor="let service of services" class="col-lg-4 col-md-6 wow bounceInUp" data-wow-delay="00ms" data-wow-duration="1000ms">
+                <div class="service__item">
+                  <div class="service-shape">
+                    <img [src]="service.shape" alt="shape" loading="lazy"/>
+                  </div>
+                  <div class="service__icon">
+                    <img [src]="service.icon" alt="icon" class="app-lafluidzy-load-image- w-75 h-75" loading="lazy"/>
+                  </div>
+                  <h4><a [routerLink]="['/service-details', service.name]" class="a-service">{{ service.title | translate }}</a></h4>
+                   <p>
+       {{ (service.description | translate).length > 100
+    ? ((service.description | translate) | slice:0:100) + '...'
+    : (service.description | translate) }}
+    </p>
+    <a *ngIf="service.description.length > 100" [routerLink]="['/service-details', service.name]" class="btn btn-link p-0 read-more" style="font-size: 0.875rem;">
+      {{"Read More" | translate}} <i class="fa-regular fa-arrow-right-long"></i>
+    </a>
+                </div>
+              </swiper-slide>
+
+
+              </swiper-container>
+            </div>
+            <div class="custom-prev-button"><i class="fa fa-chevron-left"></i></div>
+            <div class="custom-next-button"><i class="fa fa-chevron-right"></i></div>
+          </section>
+
+

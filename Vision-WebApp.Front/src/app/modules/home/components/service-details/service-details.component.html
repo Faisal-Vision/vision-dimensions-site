@@ -1,0 +1,112 @@
+<main>
+  <!-- Page banner area start here -->
+  <section class="banner__inner-page bg-image pt-180 pb-180 bg-image"
+    [style.background]="'url(assets/images/banner/banner-inner-page.webp)'">
+    <div class="shape2 wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
+      <img [src]="'assets/images/banner/inner-banner-shape2.png'" alt="shape" loading="lazy"/>
+    </div>
+    <div class="shape1 wow slideInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
+      <img [src]="'assets/images/banner/banner-solid-left-shape.png'" alt="shape" loading="lazy"/>
+    </div>
+    <div class="shape3 wow slideInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+      <img class="sway__animationX" [src]="'assets/images/banner/inner-banner-shape3.png'" alt="shape"
+        loading="lazy"/>
+    </div>
+    <div class="container  cssanimation fadeInRight">
+      <h2 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">{{"Service Details" | translate}}</h2>
+      <div class="breadcrumb-list wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+        <a routerLink="/">{{"Home" | translate}}</a><span><i
+            class="fa-regular fa-angles-right mx-2"></i>{{"Service Details" | translate}}</span>
+      </div>
+    </div>
+  </section>
+  <!-- Page banner area end here -->
+
+  <!-- Service area start here -->
+  <section class="service-single-area pt-60 pb-120 cssanimation fadeInBottom">
+    <div class="container">
+      <div class="row g-4 ">
+        <div class="col-lg-8 order-2 order-lg-1">
+          <div class="service-single__left-item">
+            <h3 class="title mb-30">{{service.title | translate}}</h3>
+            <p class="mb-20">
+              {{service.description | translate}}
+            </p>
+            <div class="image mb-50">
+              <app-lazy-load-image [imageSrc]="service.image" [defaultImage]="service.defaultImage" [alt]="'image'" [loading]="'lazy'"/>
+              <div class="service-single__video-btn">
+                <div class="video-btn video-pulse wow fadeIn" data-wow-delay="200ms" data-wow-duration="1500ms">
+                  <a class="video-popup"><i class="fa-solid fa-play"></i></a>
+
+                </div>
+              </div>
+            </div>
+            <div class="row g-5 mt-40 mb-40 align-items-center">
+              <div class="col-lg-5">
+                <h4 class="mb-20">{{"Benefits With Our Service" | translate}}</h4>
+                <ul>
+                  <li class="mb-15" *ngFor="let benefit of service.benefits"><i
+                      class="fa-solid fa-check"></i>{{benefit | translate}}</li>
+                </ul>
+              </div>
+              <div class="col-lg-7">
+                <div class="image">
+                  <app-lazy-load-image [imageSrc]="'assets/images/service/service-single-image2.webp'"
+                  [defaultImage]="'assets/images/service/service-single-image2-blur.webp'"
+                  [alt]="'image'" [loading]="'lazy'"/>
+                </div>
+              </div>
+            </div>
+            <h3 class="title mb-30">{{"How We Can Help" | translate}}</h3>
+            <p class="mb-40">{{service.HowWeCanHelp | translate}}</p>
+
+          </div>
+        </div>
+        <div class="col-lg-4 order-1 order-lg-2">
+          <div class="service-single__right-item">
+            <div class="item sub-bg mb-30">
+              <h4 class="mb-20">{{"All Services" | translate}}</h4>
+              <ul class="category service-category">
+                <li *ngFor="let service of allServices" [class.active]="service.title === currentServiceTitle">
+                  <a [routerLink]="['/service-details/' + service.name]">{{ service.title | translate }}</a>
+                  <i class="fa-regular fa-arrow-right-long primary-color"></i>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Service area end here -->
+</main>
+
+
+<!-- <h3 class="title mb-30">Most Comment Question</h3>
+                            <p class="mb-30">The is ipsum dolor sit amet consectetur adipiscing elit. Fusce is eleifend
+                                porta
+                                arcu In hac
+                                habitasse the platea
+                                thelorem turpoi dictumst. In lacus libero faucibus malesuada sagittis placerat eros sed
+                                istincidunt augue ac ante rutrum
+                                sed the is sodales augue consequat.</p> -->
+<!-- <div class="accordion" id="accordionExample">
+                                <div class="accordion-item wow fadeInDown shadow border-none" data-wow-delay="00ms"
+                                    data-wow-duration="1500ms" *ngFor="let question of service.faq">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            {{question.question}}
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <p>
+                                              {{question.answer}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->

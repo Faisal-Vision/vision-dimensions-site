@@ -1,0 +1,58 @@
+<section class="about-area sub-bg pt-120">
+  <div class="about__shape wow slideInLeft" data-wow-delay="400ms" data-wow-duration="1500ms">
+    <img [src]="'assets/images/shape/about-line.png'" alt="shape" loading="lazy" />
+  </div>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-xl-6 wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+        <div class="about__left-item">
+          <div class="image big-image">
+            <app-lazy-load-image [imageSrc]="'assets/images/about/about-image1.webp'"
+              [defaultImage]="'assets/images/about/about-image1-blur.webp'" [alt]="'image'" [loading]="'lazy'"  class="rounded-3" />
+          </div>
+          <div class="image sm-image">
+            <div class="video__btn-wrp">
+              <div class="video-btn video-pulse">
+                <a class="video-popup"><i class="fa-solid fa-play"></i></a>
+              </div>
+            </div>
+            <app-lazy-load-image [imageSrc]="'assets/images/about/about-image2.webp'"
+            [defaultImage]="'assets/images/about/about-image2-blur.webp'"
+            [alt]="'image'" [loading]="'lazy'" class="rounded-3" />
+          </div>
+          <div class="circle-shape">
+            <img [src]="'assets/images/shape/about-circle1.png'" alt="shape" loading="lazy" />
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-6">
+        <div class="section-header mb-40">
+          <h5 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms" style="
+                padding-bottom: 0px;
+            ">
+            <img class="me-1" [src]="'assets/images/icon/section-title.png'" alt="icon" loading="lazy" />
+            {{"WHO WE ARE" | translate}}
+          </h5>
+          <p class="wow fadeInUp" style="margin-top: 20px;" data-wow-delay="400ms" data-wow-duration="1500ms">
+            {{"Vision Dimensions is a leading provider of consulting and technical solutions in digital transformation. We deliver innovative IT solutions with a focus on global standards and cutting-edge technologies. Our strong partnerships with local and international collaborators enable us to offer high-value services. With proven success in IT, cybersecurity, data, and ERP projects, we have established ourselves as a trusted name in the industry." | translate}}
+          </p>
+        </div>
+        <div class="about-two__right-item wow fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+          <ul>
+            <li *ngFor="let service of services.slice(0, 2)">
+              <i class="fa-solid fa-check me-1"></i>{{service.title | translate}}</li>
+          </ul>
+          <ul>
+            <li *ngFor="let service of services.slice(2, 4)">
+              <i class="fa-solid fa-check me-1"></i>{{service.title | translate}}</li>
+          </ul>
+        </div>
+
+        <div class="about__info mt-50 wow fadeInDown" data-wow-delay="400ms" data-wow-duration="1500ms">
+          <a [routerLink]="['/about']" class="btn-one">{{"Learn More About Us" | translate}}<i
+              class="fa-regular fa-arrow-right-long"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

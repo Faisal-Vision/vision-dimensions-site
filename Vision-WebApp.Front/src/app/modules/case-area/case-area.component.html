@@ -1,0 +1,42 @@
+<section class="case-area pt-120 pb-120">
+  <div class="container">
+    <div class="d-flex flex-wrap gap-4 align-items-center justify-content-between mb-60">
+      <div class="section-header">
+        <h5 class="wow fadeInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
+          <img class="me-1" [src]="'assets/images/icon/section-title.png'" alt="icon" loading="lazy"/>
+          {{"Our Portfolio Highlights" | translate}}
+        </h5>
+        <h2 class="wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
+          {{"We Delivered Best Solution" | translate}}</h2>
+      </div>
+      <a [routerLink]="['/case']" class="btn-one wow fadeInUp" data-wow-delay="200ms"
+        data-wow-duration="1500ms">{{"View All Portfolio" | translate}} <i
+          class="fa-regular fa-arrow-right-long"></i></a>
+    </div>
+  </div>
+  <swiper-container class="swiper case__slider" loop="true" space-between="24" speed="800" autoplay="true"
+    autoplay-delay="4000" pagination="true" pagination-clickable="true" pagination-el=".case__dot" slides-per-view="4"
+    #swiper2>
+    <swiper-slide class="swiper-slide" *ngFor="let project of projects">
+      <div class="case__item">
+        <div class="image case__image">
+          <app-lazy-load-image [imageSrc]="project.mainImage" [defaultImage]="project.defaultImage" [alt]="'image'" [loading]="'lazy'"/>
+        </div>
+        <div class="case__content">
+          <span class="primary-color sm-font">{{project.category | translate}}</span>
+          <h5><a [routerLink]="['/case']" class="text-white primary-hover">{{project.title | translate}}</a></h5>
+        </div>
+        <!-- The class binding syntax [class] expects an object or string, but here we're using it for conditional classes -->
+        <!-- To fix this, use ngClass instead which is designed for conditional class application -->
+        <a [routerLink]="['/case']" class="case__btn">
+          <i class="fa-regular fa-arrow-right" *ngIf="!isRTL"></i>
+          <i class="fa-regular fa-arrow-left" *ngIf="isRTL"></i>
+        </a>
+
+      </div>
+    </swiper-slide>
+  </swiper-container>
+  <div class="mt-60 text-center wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+    <div class="dot case__dot"></div>
+  </div>
+</section>

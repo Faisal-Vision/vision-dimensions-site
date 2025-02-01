@@ -1,0 +1,87 @@
+  <main>
+    <!-- Page banner area start here -->
+    <section class="banner__inner-page bg-image pt-180 pb-180 bg-image"
+      [style.background]="'url(assets/images/banner/banner-inner-page.webp)'">
+      <div class="shape2 wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
+        <img [src]="'assets/images/banner/inner-banner-shape2.png'" alt="shape" loading="lazy"/>
+      </div>
+      <div class="shape1 wow slideInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
+        <img [src]="'assets/images/banner/banner-solid-left-shape.png'" alt="shape" loading="lazy"/>
+      </div>
+      <div class="shape3 wow slideInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+        <img class="sway__animationX" [src]="'assets/images/banner/inner-banner-shape3.png'" alt="shape" loading="lazy"/>
+      </div>
+      <div class="container  cssanimation fadeInRight">
+        <h2 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">{{"About Us" | translate}}</h2>
+        <div class="breadcrumb-list wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+          <a [routerLink]="['/']">{{"Home" | translate}}</a><span><i
+              class="fa-regular fa-angles-right mx-2"></i>{{"About Us" | translate}}</span>
+        </div>
+      </div>
+    </section>
+    <!-- Page banner area end here -->
+
+    <!-- About area start here -->
+    <section class="about-area sub-bg pt-120 cssanimation fadeInBottom">
+      <div class="about__shape wow slideInLeft" data-wow-delay="400ms" data-wow-duration="1500ms">
+        <img [src]="'assets/images/shape/about-line.png'" alt="shape" loading="lazy"/>
+      </div>
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-xl-6 wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+            <div class="about__left-item">
+              <div class="image big-image">
+                <app-lazy-load-image [imageSrc]="'assets/images/about/about-image1.webp'"
+              [defaultImage]="'assets/images/about/about-image1-blur.webp'" [alt]="'image'" [loading]="'lazy'" class="rounded-3" />
+              </div>
+              <div class="image sm-image">
+                <div class="video__btn-wrp">
+                  <div class="video-btn video-pulse">
+                    <a class="video-popup"><i class="fa-solid fa-play"></i></a>
+                  </div>
+                </div>
+                 <app-lazy-load-image [imageSrc]="'assets/images/about/about-image2.webp'"
+            [defaultImage]="'assets/images/about/about-image2-blur.webp'"
+            [alt]="'image'" [loading]="'lazy'" class="rounded-3" />
+              </div>
+              <div class="circle-shape">
+                <img [src]="'assets/images/shape/about-circle1.png'" alt="shape" loading="lazy"/>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6">
+            <div class="section-header mb-40">
+              <h5 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms" style="
+                padding-bottom: 0px;
+            ">
+                <img class="me-1" [src]="'assets/images/icon/section-title.png'" alt="icon" loading="lazy"/>
+                {{"WHO WE ARE" | translate}}
+              </h5>
+              <p class="wow fadeInUp" style="margin-top: 20px;" data-wow-delay="400ms" data-wow-duration="1500ms">
+                {{"Vision Dimensions is a company specialized in providing consulting and technical solutions in the field of digital transformation. Since its establishment, the company has been committed to delivering innovative IT solutions through highly qualified professionals, adhering to global standards, and implementing best practices and the latest technologies. Vision Dimensions maintains strategic partnerships with local and international partners to provide added-value services, which has strengthened its position among leading global companies in this field. The company has achieved tangible success in executing diverse projects in information technology, cybersecurity, data, and enterprise resource planning, establishing itself as synonymous with excellence in its services." | translate}}
+              </p>
+            </div>
+            <div class="about__info mt-50 wow fadeInDown" data-wow-delay="400ms" data-wow-duration="1500ms">
+              <a [routerLink]="['/service']" class="btn-one">{{"Learn More About Us" | translate}}<i
+                  class="fa-regular fa-arrow-right-long"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About area end here -->
+
+    <!-- Offer area start here -->
+    <app-offer-area></app-offer-area>
+    <!-- Offer area end here -->
+
+    <!-- Brand area start here -->
+    <!-- <app-brand-area></app-brand-area> -->
+    <!-- Brand area end here -->
+
+    <!-- case area start here -->
+    <app-case-area></app-case-area>
+
+    <!-- case area end here -->
+  </main>

@@ -1,0 +1,76 @@
+<div class="brand-area">
+  <div class="container">
+    <div class="brand__wrp">
+      <!-- <div class="brand__shape">
+        <img src="assets/images/shape/brand-shape.png" alt="">
+      </div> -->
+      <!-- <div class="swiper brand__slider">
+        <div class="swiper-wrapper justify-content-center align-items-end">
+          <div class="swiper-slide">
+            <div class="brand__image image">
+              <app-lazy-load-image [imageSrc]="'assets/images/brand/brand-image1.webp'" alt="image" loading="lazy"/>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="brand__image image">
+              <app-lazy-load-image [imageSrc]="'assets/images/brand/brand-image2.webp'" alt="image" loading="lazy"/>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="brand__image image">
+              <app-lazy-load-image [imageSrc]="'assets/images/brand/brand-image3.webp'" alt="image" loading="lazy"/>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="brand__image image">
+              <app-lazy-load-image [imageSrc]="'assets/images/brand/brand-image4.webp'" alt="image" loading="lazy"/>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="brand__image image">
+              <app-lazy-load-image [imageSrc]="'assets/images/brand/brand-image5.webp'" alt="image" loading="lazy"/>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+
+      <swiper-container class="swiper brand__slider d-flex align-items-center" loop="true" space-between="24" speed="800" autoplay="true"
+        autoplay-delay="4000" autoplay-disable-on-interaction="false" #brandSwiper>
+
+        <swiper-slide class="swiper-slide">
+          <div class="brand__image image">
+            <app-lazy-load-image [imageSrc]="'assets/images/brand/brand-image1.webp'" [alt]="'image'" [loading]="'lazy'"
+              class="img-fluid " />
+          </div>
+        </swiper-slide>
+
+        <swiper-slide class="brand__image image">
+          <app-lazy-load-image [imageSrc]="'assets/images/brand/brand-image2.webp'" [alt]="'image'" [loading]="'lazy'"
+            class="img-fluid " />
+        </swiper-slide>
+
+
+        <swiper-slide class="brand__image image">
+          <app-lazy-load-image [imageSrc]="'assets/images/brand/brand-image3.webp'" [alt]="'image'" [loading]="'lazy'"
+            class="img-fluid " />
+        </swiper-slide>
+
+
+        <swiper-slide class="brand__image image">
+          <app-lazy-load-image [imageSrc]="'assets/images/brand/brand-image4.webp'" [alt]="'image'" [loading]="'lazy'"
+            class="img-fluid " />
+        </swiper-slide>
+
+
+        <swiper-slide class="brand__image image">
+          <app-lazy-load-image [imageSrc]="'assets/images/brand/brand-image5.webp'" [alt]="'image'" [loading]="'lazy'"
+            class="img-fluid " />
+        </swiper-slide>
+
+
+      </swiper-container>
+
+    </div>
+  </div>
+</div>
